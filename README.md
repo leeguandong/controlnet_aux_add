@@ -1,4 +1,4 @@
-# ControlNet auxiliary models
+# ControlNet auxiliary add models
 
 This is a PyPi installable package of [lllyasviel's ControlNet Annotators](https://github.com/lllyasviel/ControlNet/tree/main/annotator)
 
