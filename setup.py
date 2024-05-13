@@ -89,6 +89,8 @@ _deps = [
     "timm<=0.6.7",
     "torchvision",
     "scikit-image",
+    "transformers",
+    "controlnet_aux"
 ]
 
 # this is a lookup table with items like:
