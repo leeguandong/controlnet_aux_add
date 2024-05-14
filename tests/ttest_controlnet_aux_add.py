@@ -12,7 +12,7 @@ import numpy as np
 from PIL import Image
 from io import BytesIO
 from controlnet_aux import LineartDetector
-from controlnet_aux_add import DepthEstimator, ImageUperNetSegmentor
+from controlnet_aux_add import DepthEstimator, ImageUperNetSegmentor, Invert
 
 OUTPUT_DIR = "./outputs"
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -70,8 +70,15 @@ def test_upernet(img):
     output("upernet", upernet(img))
 
 
+def test_invert(img):
+    invert = Invert()
+    common("invert", invert, img)
+    output("invert", invert(img))
+
+
 if __name__ == "__main__":
     img = Image.open("./outputs/images_pose.png").convert("RGB").resize((512, 512))
     # test_lineart(img)
     # test_depth_anything(img)
-    test_upernet(img)
+    # test_upernet(img)
+    test_invert(img)
