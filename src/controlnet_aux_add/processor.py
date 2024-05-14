@@ -7,18 +7,20 @@ from typing import Dict, Optional, Union
 
 from PIL import Image
 
-from controlnet_aux_add import (DepthEstimator, ImageUperNetSegmentor)
+from controlnet_aux_add import (DepthEstimator, ImageUperNetSegmentor, Invert)
 
 LOGGER = logging.getLogger(__name__)
 
 MODELS = {
     'dpt': {"class": DepthEstimator, "checkpoint": False},
-    'upernet': {"class": ImageUperNetSegmentor, "checkpoint": False}
+    'upernet': {"class": ImageUperNetSegmentor, "checkpoint": False},
+    'invert': {"class": Invert, "checkpoint": False}
 }
 
 MODEL_PARAMS = {
     'dpt': {},
-    'upernet': {}
+    'upernet': {},
+    "invert": {}
 }
 
 CHOICES = f"Choices for the processor are {list(MODELS.keys())}"
